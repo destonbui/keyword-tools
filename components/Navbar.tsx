@@ -15,6 +15,7 @@ import ThemeToggleButton from "./theme/ThemeToggleButton";
 import { ThemeContext, ThemeContextType } from "./theme/ThemeContext";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { GithubIcon } from "./GithubIcon";
 
 interface Props {}
 const NavbarClient = (props: Props) => {
@@ -37,6 +38,16 @@ const NavbarClient = (props: Props) => {
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent justify="end">
+        <NavbarItem>
+          <Link
+            href="https://github.com/destonbui/keyword-tools"
+            target="_blank"
+          >
+            <div className="scale-150">
+              <GithubIcon />
+            </div>
+          </Link>
+        </NavbarItem>
         <NavbarItem>
           <ThemeToggleButton />
         </NavbarItem>
