@@ -1,13 +1,13 @@
-import Main from "@/components/Main";
-import Navbar from "@/components/Navbar";
-import ThemeToggleButton from "@/components/theme/ThemeToggleButton";
+"use client";
 
-import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-export default function Home() {
-  return (
-    <Main>
-      <Navbar />
-    </Main>
-  );
-}
+interface Props {}
+const Page = (props: Props) => {
+  const router = useRouter();
+  useEffect(() => {
+    router.push("/cong-cu-doi-sanh");
+  });
+};
+export default Page;

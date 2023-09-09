@@ -4,6 +4,9 @@ import { Inter } from "next/font/google";
 
 import { Providers } from "@/components/NextUI/providers";
 
+import Navbar from "@/components/Navbar";
+import Main from "@/components/Main";
+
 const inter = Inter({ subsets: ["vietnamese"] });
 
 export const metadata: Metadata = {
@@ -19,7 +22,12 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Main>
+            <Navbar />
+            <div className="w-full max-w-[1024px] px-6 pt-6">{children}</div>
+          </Main>
+        </Providers>
       </body>
     </html>
   );

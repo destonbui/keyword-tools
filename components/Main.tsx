@@ -12,7 +12,7 @@ const Main = ({ children }: Props) => {
 
   return (
     <main
-      className={`${theme} min-h-screen flex flex-col text-foreground bg-background`}
+      className={`${theme} min-h-screen flex flex-col items-center text-foreground bg-background`}
     >
       {children}
     </main>
