@@ -2,7 +2,6 @@
 
 import { useState, useContext } from "react";
 import {
-  Link,
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -11,9 +10,11 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from "@nextui-org/react";
+
 import ThemeToggleButton from "./theme/ThemeToggleButton";
 import { ThemeContext, ThemeContextType } from "./theme/ThemeContext";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 interface Props {}
 const NavbarClient = (props: Props) => {
@@ -50,12 +51,19 @@ const NavbarClient = (props: Props) => {
         <div className="w-full lg:px-6 pt-3 lg:pt-6 max-w-[1024px]">
           <NavbarMenuItem>
             <Link
-              color={
-                pathname === "/cong-cu-doi-sanh" ? "primary" : "foreground"
-              }
-              className={`${theme}`}
-              href="#"
-              size="lg"
+              onClick={() => {
+                if (pathname === "/cong-cu-doi-sanh" && isMenuOpen) {
+                  setIsMenuOpen(false);
+                }
+              }}
+              className={` ${theme}
+                ${
+                  pathname === "/cong-cu-doi-sanh"
+                    ? "text-blue-600"
+                    : "text-gray-200"
+                }
+              `}
+              href="/cong-cu-doi-sanh"
             >
               Công Cụ Đối Sánh
             </Link>
