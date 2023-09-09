@@ -35,7 +35,7 @@ const ChinhXacResultDisplay = (props: Props) => {
     <div className="flex flex-col w-full">
       <div className="flex items-center gap-6">
         <label
-          className="flex-grow text-lg"
+          className="flex-grow text-base sm:text-lg"
           htmlFor="doi-sanh-chinh-xac-result"
         >
           Đối sánh chính xác
@@ -43,7 +43,7 @@ const ChinhXacResultDisplay = (props: Props) => {
         <Checkbox
           isSelected={removeTones}
           onValueChange={setRemoveTones}
-          size="md"
+          size="sm"
         >
           Bỏ dấu
         </Checkbox>

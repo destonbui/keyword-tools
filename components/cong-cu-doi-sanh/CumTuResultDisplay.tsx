@@ -37,13 +37,16 @@ const CumTuResultDisplay = (props: Props) => {
   return (
     <div className="flex flex-col w-full">
       <div className="flex items-center gap-6">
-        <label className="flex-grow text-lg" htmlFor="doi-sanh-cum-tu-result">
+        <label
+          className="flex-grow text-base sm:text-lg"
+          htmlFor="doi-sanh-cum-tu-result"
+        >
           Đối sánh cụm từ
         </label>
         <Checkbox
           isSelected={removeTones}
           onValueChange={setRemoveTones}
-          size="md"
+          size="sm"
         >
           Bỏ dấu
         </Checkbox>

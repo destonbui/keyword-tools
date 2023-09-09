@@ -5,16 +5,16 @@ import InputTextarea from "@/components/cong-cu-doi-sanh/InputTextarea";
 export default function Page() {
   return (
     <div className="flex flex-col">
-      <h1 className="font-black tracking-wide uppercase pb-3 text-3xl">
+      <h1 className="font-black tracking-wide uppercase pb-3 text-2xl sm:text-3xl">
         Công Cụ Đối Sánh
       </h1>
       <InputTextarea />
 
-      <h2 className="font-bold uppercase pt-6 pb-3 text-2xl tracking-wide">
+      <h2 className="font-bold uppercase pt-6 pb-3 text-xl sm:text-2xl tracking-wide">
         Kết quả
       </h2>
 
-      <div className="w-full flex flex-col gap-3">
+      <div className="w-full flex flex-col lg:flex-row gap-3 lg:gap-6">
         {/* Đối sánh cụm từ */}
         <CumTuResultDisplay />
         {/* Đối sanh chính sát */}
