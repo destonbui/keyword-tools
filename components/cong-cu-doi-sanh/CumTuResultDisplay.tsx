@@ -22,7 +22,11 @@ const CumTuResultDisplay = (props: Props) => {
       let keywordsArray = input.replace(/^\s+|\s+$/g, "").split("\n");
 
       setResult('"' + keywordsArray.join('"\n"') + '"');
-      setResultCopy('"""' + keywordsArray.join('"""\n"""') + '"""');
+      if (keywordsArray.length === 1) {
+        setResultCopy('"' + keywordsArray.join('"\n"') + '"');
+      } else {
+        setResultCopy('"""' + keywordsArray.join('"""\n"""') + '"""');
+      }
     } else {
       let tonesRemovedInput = removeVietnameseTones(input);
       let keywordsArray = tonesRemovedInput
@@ -30,7 +34,12 @@ const CumTuResultDisplay = (props: Props) => {
         .split("\n");
 
       setResult('"' + keywordsArray.join('"\n"') + '"');
-      setResultCopy('"""' + keywordsArray.join('"""\n"""') + '"""');
+
+      if (keywordsArray.length === 1) {
+        setResultCopy('"' + keywordsArray.join('"\n"') + '"');
+      } else {
+        setResultCopy('"""' + keywordsArray.join('"""\n"""') + '"""');
+      }
     }
   }, [removeTones, input]);
 
